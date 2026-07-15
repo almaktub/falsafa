@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>falsafa</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">fal<em>safa</em></a>
+    <div style="display:flex; align-items:center; gap:24px;">
+      <ul class="nav-links">
+        <li><a href="index.html">Browse</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+      <button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark mode">
+        <span class="icon" id="theme-icon">☽</span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+
+    <section class="hero">
+
+      <div class="word-definition">
+        <span class="word-entry">fal&middot;sa&middot;fa</span>
+        <span class="word-phonetic">FAL-sə-fə</span>
+        <span class="word-nastaliq" lang="fa" dir="rtl">فلسفه</span>
+        <div class="word-meanings">
+          <span class="word-pos">noun, Arabic (from Greek philosophia).</span> Philosophy, as it was carried, translated, and pushed further by the Islamic world for roughly five hundred years while a chunk of Europe wasn't reading much of anything.
+          <span class="word-pos">this site.</span> Big ideas, explained the way I'd explain them to you at a kitchen table, not a lecture hall.
+        </div>
+        <p class="word-note">I picked this word because most philosophy sites and syllabi skip a five-hundred-year stretch of the story like it didn't happen, and I got tired of it happening quietly. This isn't a survey course. It's the stuff that actually rearranged something in me, told the way I'd tell it to you in person: no robes, no incense, no pretending the big names didn't have bad days, bad takes, and one or two genuinely unhinged decisions.</p>
+      </div>
+
+      <h1>Big words, explained like <em>a person</em> is talking to you.</h1>
+      <p>Philosophers you've heard of and a few you should have. No lecture hall tone, no boring big words thrown around to sound smart. Just the ideas that are actually worth carrying around, told straight.</p>
+    </section>
+
+    <div class="browse-head">
+      <h2>Browse the entries</h2>
+      <div class="view-toggle">
+        <button id="btn-thinker" class="active" onclick="setView('thinker')">By Thinker</button>
+        <button id="btn-topic" onclick="setView('topic')">By Topic</button>
+      </div>
+    </div>
+
+    <div class="topic-filters" id="topic-filters"></div>
+
+    <div id="entry-container"></div>
+
+  </main>
+
+  <footer>
+    &copy; 2026 falsafa. Roughly five hundred years of the syllabus, restored.
+  </footer>
+
+  <script>
+    const icon = document.getElementById('theme-icon');
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark');
+      icon.textContent = '☀';
+    }
+    function toggleTheme() {
+      document.body.classList.toggle('dark');
+      const isDark = document.body.classList.contains('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      icon.textContent = isDark ? '☀' : '☽';
+    }
+
+    const TOPICS = [
+      { slug: 'meaning', label: 'Meaning' },
+      { slug: 'suffering', label: 'Suffering' },
+      { slug: 'death', label: 'Death' },
+      { slug: 'control', label: 'Control' },
+      { slug: 'self', label: 'Self & Consciousness' },
+    ];
+
+    const ENTRIES = [
+      {
+        name: 'Albert Camus',
+        href: 'entries/albert-camus.html',
+        kicker: 'Thinker · France, 1913–1960',
+        excerpt: "Everyone owns a Camus quote and almost nobody has read him. Here's the boulder, the absurd, and why the answer was never to put the rock down.",
+        tags: ['meaning', 'death', 'control'],
+      },
+      {
+        name: 'Friedrich Nietzsche',
+        href: 'entries/friedrich-nietzsche.html',
+        kicker: 'Thinker · Prussia/Germany, 1844–1900',
+        excerpt: "Not the mustache on the gym bro's water bottle. A demon asks you to relive your exact life forever, grief included. Could you say yes?",
+        tags: ['suffering', 'meaning', 'self'],
+      },
+      {
+        name: 'Marcus Aurelius',
+        href: 'entries/marcus-aurelius.html',
+        kicker: 'Thinker · Rome, 121–180 CE',
+        excerpt: "The most powerful man alive, writing private pep talks to himself in a war tent, trying to talk himself into being decent one more day.",
+        tags: ['control', 'suffering', 'death'],
+      },
+      {
+        name: 'Ibn Sina (Avicenna)',
+        href: 'entries/ibn-sina.html',
+        kicker: 'Thinker · Bukhara/Persia, 980–1037 CE',
+        excerpt: "Six hundred years before Descartes, a man floating in total sensory nothing already knew one thing for certain: he existed.",
+        tags: ['self', 'meaning'],
+      },
+    ];
+
+    let currentView = 'thinker';
+    let activeTopic = null;
+
+    function labelFor(slug) {
+      return TOPICS.find(t => t.slug === slug).label;
+    }
+
+    function renderFilters() {
+      const el = document.getElementById('topic-filters');
+      el.innerHTML = '';
+      TOPICS.forEach(t => {
+        const btn = document.createElement('button');
+        btn.textContent = t.label;
+        if (activeTopic === t.slug) btn.classList.add('active');
+        btn.onclick = () => {
+          activeTopic = activeTopic === t.slug ? null : t.slug;
+          render();
+        };
+        el.appendChild(btn);
+      });
+    }
+
+    function entryCardHTML(e) {
+      const tagHTML = e.tags.map(slug => `<span>${labelFor(slug)}</span>`).join('');
+      return `
+        <li>
+          <a href="${e.href}" class="entry-link">
+            <div class="entry-kicker">${e.kicker}</div>
+            <div class="entry-title">${e.name}</div>
+            <div class="entry-excerpt">${e.excerpt}</div>
+            <div class="entry-tags">${tagHTML}</div>
+          </a>
+        </li>`;
+    }
+
+    function render() {
+      renderFilters();
+      const container = document.getElementById('entry-container');
+      const filtered = activeTopic ? ENTRIES.filter(e => e.tags.includes(activeTopic)) : ENTRIES;
+
+      document.getElementById('btn-thinker').classList.toggle('active', currentView === 'thinker');
+      document.getElementById('btn-topic').classList.toggle('active', currentView === 'topic');
+
+      if (currentView === 'thinker') {
+        const sorted = [...filtered].sort((a, b) => a.name.localeCompare(b.name));
+        container.innerHTML = `<ul class="entry-list">${sorted.map(entryCardHTML).join('')}</ul>`;
+      } else {
+        const topicsToShow = activeTopic ? TOPICS.filter(t => t.slug === activeTopic) : TOPICS;
+        container.innerHTML = topicsToShow.map(t => {
+          const inTopic = ENTRIES.filter(e => e.tags.includes(t.slug));
+          if (!inTopic.length) return '';
+          return `
+            <div class="browse-head" style="margin-top:8px;">
+              <h2>${t.label}</h2>
+            </div>
+            <ul class="entry-list">${inTopic.map(entryCardHTML).join('')}</ul>`;
+        }).join('');
+      }
+    }
+
+    function setView(view) {
+      currentView = view;
+      render();
+    }
+
+    // support ?topic=slug links coming from entry pages
+    const params = new URLSearchParams(window.location.search);
+    const topicParam = params.get('topic');
+    if (topicParam && TOPICS.some(t => t.slug === topicParam)) {
+      activeTopic = topicParam;
+    }
+
+    render();
+  </script>
+
+</body>
+</html>

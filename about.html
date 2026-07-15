@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — falsafa</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">fal<em>safa</em></a>
+    <div style="display:flex; align-items:center; gap:24px;">
+      <ul class="nav-links">
+        <li><a href="index.html">Browse</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+      <button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark mode">
+        <span class="icon" id="theme-icon">☽</span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+
+    <a href="index.html" class="back-link">← Back</a>
+
+    <div class="about-header">
+      <h1>About</h1>
+      <p class="subtitle">Why this exists</p>
+    </div>
+
+    <div class="about-body">
+      <p>My name is Yaya. I write another site, maktub, that's mostly personal essays: books, family, grief, the strange logistics of being an immigrant in America. Philosophy shows up in almost everything I write over there without me planning it, because it's genuinely how I process most of my life. This site is what happens when I stop letting it show up sideways and just write about it directly.</p>
+
+      <p>I got tired of two things. The first is how most philosophy content online is either a college syllabus nobody asked for or a quote stapled to a stock photo of a mountain. The second is how much of the story gets left out. Most people can name Aristotle, then Descartes, and have no idea what happened in the roughly five hundred years in between, when the center of the intellectual world ran through Baghdad and Bukhara and Cordoba instead of Paris and Vienna. That gap isn't an accident. It's a habit. I'd like to correct it a little, one entry at a time, alongside the names everyone already knows.</p>
+
+      <p>Every entry here follows the same rule: if I can't explain the idea the way I'd explain the ending of The Brothers Karamazov to a friend at 1 A.M., over there, I'm not done writing it yet. No robes, no incense, no pretending these were untouchable geniuses instead of actual people who had bad marriages, worse tempers, and occasionally got imprisoned by their own government. The ideas are heavy enough without the costume.</p>
+
+      <p>This is a live project. New entries get added when I have something honest to say about a thinker, not on a schedule. If a name is missing that you think belongs here, or you've read something I got wrong, tell me. I'd rather be corrected than confidently incomplete.</p>
+
+      <p>Love, Yaya</p>
+    </div>
+
+  </main>
+
+  <footer>
+    &copy; 2026 falsafa. Also not copyrighted, same as maktub. If you scrolled this far, hi.
+  </footer>
+
+  <script>
+    const icon = document.getElementById('theme-icon');
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark');
+      icon.textContent = '☀';
+    }
+    function toggleTheme() {
+      document.body.classList.toggle('dark');
+      const isDark = document.body.classList.contains('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      icon.textContent = isDark ? '☀' : '☽';
+    }
+  </script>
+
+</body>
+</html>
