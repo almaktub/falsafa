@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gabor Maté, and the Question Under the Question — falsafa</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <nav>
+    <a href="../index.html" class="nav-logo">fal<em>safa</em></a>
+    <div style="display:flex; align-items:center; gap:24px;">
+      <ul class="nav-links">
+        <li><a href="../index.html">Browse</a></li>
+        <li><a href="../about.html">About</a></li>
+      </ul>
+      <button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark mode">
+        <span class="icon" id="theme-icon">☽</span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+
+    <a href="../index.html" class="back-link">← All entries</a>
+
+    <div class="entry-header">
+      <div class="kicker">Thinker · Hungary/Canada, b. 1944</div>
+      <h1>Gabor Maté, and the Question Under the Question</h1>
+      <div class="meta">Key text: <em>In the Realm of Hungry Ghosts</em> (2008)</div>
+      <div class="tags">
+        <a href="../index.html?topic=suffering">Suffering</a>
+        <a href="../index.html?topic=self">Self & Consciousness</a>
+        <a href="../index.html?topic=control">Control</a>
+      </div>
+    </div>
+
+    <div class="entry-facts">
+      <div class="fact"><span class="fact-label">Born</span>1944, Budapest, survived infancy during the Nazi occupation, later a physician in Vancouver</div>
+      <div class="fact"><span class="fact-label">Known for</span><em>In the Realm of Hungry Ghosts</em>, <em>When the Body Says No</em>, <em>The Myth of Normal</em></div>
+      <div class="fact"><span class="fact-label">Pioneered</span>Treating addiction as a rational response to pain instead of a moral failure or a disease you either have or don't</div>
+    </div>
+
+    <div class="entry-body">
+
+      <p>Maté isn't a philosopher by training, he's a physician, and for years he ran a clinic in Vancouver's Downtown Eastside, one of the most concentrated pockets of addiction in North America, treating people most of the medical system had already written off. That's an unusual entry point into a philosophy site, but the question he built his whole career around is as old as any of them: why do people suffer the way they do, and what does the suffering actually mean once you stop trying to make it go away with a diagnosis code.</p>
+
+      <p>His most quoted line reframes addiction with a single flipped question. The standard clinical approach asks "why the addiction," treating the substance or behavior as the disease itself, something to be extracted like a tumor. Maté asks instead "why the pain." Not why does this person compulsively use, but what happened to this person that using became the most effective tool they had for managing something otherwise unbearable. It sounds like a small rhetorical shift. In practice it rebuilds the whole moral architecture around the problem, because a person managing unbearable pain with the only tool available to them is not the same story as a person with a character defect who simply won't stop.</p>
+
+      <p>The claim under that reframe is his real contribution, and it's a genuine philosophical position on what a self even is: trauma, in his definition, is not the event. It's not the car accident or the absent parent or the addiction in the house you grew up in. Trauma is what happens inside you in the absence of an empathetic witness to what happened to you. Two people can go through the identical event and come out with completely different relationships to it, depending almost entirely on whether someone was present, attuned, and able to help them process it while it was happening. The wound isn't the world doing something to you. The wound is what's left when nobody was there to help you metabolize it, and it gets stored in the body, not just the memory, which is why he insists the body keeps score whether or not the mind is willing to admit the ledger exists.</p>
+
+      <p>This connects to a harder claim he makes about identity itself, one that puts him closer to the Buddhist thinkers he cites approvingly than to most of Western medicine: a lot of what people experience as their fixed personality, the anxious one, the people-pleaser, the one who can't sit still, isn't actually who they are. It's an adaptation, built in childhood, to survive a specific environment that needed exactly that trait to stay safe or loved. The tragedy, in his account, is that the adaptation outlives the environment that required it, and people spend decades treating a survival strategy as their permanent identity, never questioning whether the thing that kept a scared kid safe is still doing them any good as an adult holding down a job and a relationship.</p>
+
+      <p>He's drawn real pushback from parts of the medical and addiction research community, some of whom think he underweights genetics and pure neurochemistry in favor of a narrative that fits his own clinical experience a little too neatly, and it's fair to hold that in view rather than treat his framework as the final word on a genuinely contested field.</p>
+
+      <p>What stays with me isn't the clinical material so much as the reframe underneath it, because I see a version of "why the pain, not why the behavior" constantly in my own work, standing in houses where somebody's spent forty thousand dollars on a home theater they'll use twice a year, or a security system for a house that was never actually unsafe. I used to read that as excess. Maté's frame makes me ask a different, quieter question instead: what's the theater actually managing. Not because I get to ask it out loud to a client, mounting speakers isn't therapy and I'm not qualified to run it. But it changed what I assume is happening in a room before I've said a word.</p>
+
+      <p class="entry-closer">Ask why the pain, not why the behavior. Everything downstream of that question gets kinder, including the questions you ask yourself.</p>
+
+    </div>
+
+  </main>
+
+  <footer>
+    &copy; 2026 falsafa. The wound is what happened in the silence after, not the event itself.
+  </footer>
+
+  <script>
+    const icon = document.getElementById('theme-icon');
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark');
+      icon.textContent = '☀';
+    }
+    function toggleTheme() {
+      document.body.classList.toggle('dark');
+      const isDark = document.body.classList.contains('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      icon.textContent = isDark ? '☀' : '☽';
+    }
+  </script>
+
+</body>
+</html>

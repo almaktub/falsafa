@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jordan Peterson, and the Chore He Turned Into a Doctrine — falsafa</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <nav>
+    <a href="../index.html" class="nav-logo">fal<em>safa</em></a>
+    <div style="display:flex; align-items:center; gap:24px;">
+      <ul class="nav-links">
+        <li><a href="../index.html">Browse</a></li>
+        <li><a href="../about.html">About</a></li>
+      </ul>
+      <button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark mode">
+        <span class="icon" id="theme-icon">☽</span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+
+    <a href="../index.html" class="back-link">← All entries</a>
+
+    <div class="entry-header">
+      <div class="kicker">Thinker · Canada, b. 1962</div>
+      <h1>Jordan Peterson, and the Chore He Turned Into a Doctrine</h1>
+      <div class="meta">Key text: <em>Maps of Meaning</em> (1999)</div>
+      <div class="tags">
+        <a href="../index.html?topic=meaning">Meaning</a>
+        <a href="../index.html?topic=control">Control</a>
+        <a href="../index.html?topic=suffering">Suffering</a>
+      </div>
+    </div>
+
+    <div class="entry-facts">
+      <div class="fact"><span class="fact-label">Born</span>1962, Alberta, Canada, still living and still publishing</div>
+      <div class="fact"><span class="fact-label">Known for</span><em>Maps of Meaning</em>, <em>12 Rules for Life</em>, a clinical career before the fame arrived</div>
+      <div class="fact"><span class="fact-label">Pioneered</span>Reading Jungian myth and Genesis as psychology instead of theology, then getting louder about it than any academic usually does</div>
+    </div>
+
+    <div class="entry-body">
+
+      <p>"Clean your room" is the most mocked piece of advice a public intellectual has given out this century, and also, I'd argue, the most misunderstood. It sounds like a dad joke dressed up in a philosophy degree. But it's rule six of twelve, and by the time you get there in the actual book, it's not really about a room. It's the smallest possible unit of a much older argument Peterson has been making his whole career, going back to a dense 1999 book almost nobody who's mocked him has read: that chaos and order are the two permanent conditions of being a person, and meaning shows up specifically in the narrow strip where you're voluntarily taking on responsibility at the edge between them.</p>
+
+      <p>His model, borrowed heavily from Jung and cross-referenced against myth from a dozen traditions, splits experience into the known and the unknown, order and chaos, and argues most cultures encode this same map differently: the explored territory versus the dragon at the edge of it. Too much order and you get rigidity, tyranny, a life so controlled it can't adapt to anything new. Too much chaos and you get collapse, the floor genuinely not holding. Peterson's claim is that meaning, real meaning, not the borrowed kind you get from a slogan, lives in the act of voluntarily stepping toward the chaos side, taking on a manageable dose of it, and pulling something ordered out of it through your own effort. That's what a room actually is, in his frame. A tiny, low-stakes chaos, entirely within your control, that you either master or don't, and the pattern of which one you choose scales up to everything larger.</p>
+
+      <p>The part that made him famous outside academia was less the myth analysis and more the diagnosis underneath it: that a lot of people, especially a lot of young men who found him first, were being told by the culture around them that responsibility was a trap and freedom meant having none of it, and that this was making them miserable rather than free. His answer wasn't ideological in the way it's often flattened into online. It was closer to something a good therapist would say, because that's the job he actually had for twenty years before any of this: stop waiting for the world to hand you meaning, take on the smallest real responsibility in front of you, and build outward from there, because a self with no responsibility attached to it has nothing to stand on when things get hard, and things get hard for everyone eventually.</p>
+
+      <p>I'm not going to pretend the rest of the picture isn't there, because an honest entry doesn't get to skip it. Peterson became one of the most polarizing public figures alive largely through fights that have very little to do with Jung or Genesis, culture war arguments about gender, pronouns, free speech on campuses, arguments that made him a hero to some people who never read a page of Maps of Meaning and a punchline to others who never read a page either. He went through a severe, well-documented health crisis in recent years, benzodiazepine dependence, a medically induced coma in Russia, a public account of nearly dying, and came back from it changed and, by his own description and plenty of outside observers, angrier and rawer than before. None of that erases the earlier work. It also shouldn't get airbrushed out to make the philosophy tidier than the man actually was.</p>
+
+      <p>What I keep, separate from the parts of him I find exhausting, is the room. I've spent years walking into other people's houses for work, and you learn fast that the state of somebody's space tells you almost everything about where the rest of their life is standing, not because a messy garage means a messy person, but because the smallest domain someone actually controls is where you can watch, in real time, whether they're stepping toward the chaos edge or backing away from it entirely. I've caught myself using his frame on my own place more than once, at midnight, staring at a pile of cable I told myself I'd sort out weeks ago. It's a small thing. He'd say that's the point. The dragon doesn't start big. It starts exactly that size.</p>
+
+      <p class="entry-closer">He's a harder man to cleanly agree with than the meme lets on. The room was never really about the room, and that part still holds up.</p>
+
+    </div>
+
+  </main>
+
+  <footer>
+    &copy; 2026 falsafa. The dragon starts smaller than you think.
+  </footer>
+
+  <script>
+    const icon = document.getElementById('theme-icon');
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark');
+      icon.textContent = '☀';
+    }
+    function toggleTheme() {
+      document.body.classList.toggle('dark');
+      const isDark = document.body.classList.contains('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      icon.textContent = isDark ? '☀' : '☽';
+    }
+  </script>
+
+</body>
+</html>

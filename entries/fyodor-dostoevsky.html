@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dostoevsky, and the Man Who Wanted to Be Sick — falsafa</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <nav>
+    <a href="../index.html" class="nav-logo">fal<em>safa</em></a>
+    <div style="display:flex; align-items:center; gap:24px;">
+      <ul class="nav-links">
+        <li><a href="../index.html">Browse</a></li>
+        <li><a href="../about.html">About</a></li>
+      </ul>
+      <button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark mode">
+        <span class="icon" id="theme-icon">☽</span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+
+    <a href="../index.html" class="back-link">← All entries</a>
+
+    <div class="entry-header">
+      <div class="kicker">Thinker · Russia, 1821–1881</div>
+      <h1>Dostoevsky, and the Man Who Wanted to Be Sick</h1>
+      <div class="meta">Key text: <em>Notes from Underground</em> (1864)</div>
+      <div class="tags">
+        <a href="../index.html?topic=meaning">Meaning</a>
+        <a href="../index.html?topic=self">Self & Consciousness</a>
+        <a href="../index.html?topic=suffering">Suffering</a>
+      </div>
+    </div>
+
+    <div class="entry-facts">
+      <div class="fact"><span class="fact-label">Lived</span>1821–1881, Russia (60 years, four of them in a Siberian labor camp)</div>
+      <div class="fact"><span class="fact-label">Known for</span><em>Crime and Punishment</em>, <em>The Brothers Karamazov</em>, <em>Notes from Underground</em>, <em>The Idiot</em></div>
+      <div class="fact"><span class="fact-label">Pioneered</span>Psychological realism sharp enough that Nietzsche and Freud both admitted they owed him something</div>
+    </div>
+
+    <div class="entry-body">
+
+      <p>If you've read Dostoevsky at all, it was probably The Brothers Karamazov, probably in a class, probably with a professor telling you the Grand Inquisitor chapter is the whole point and everything else is scaffolding. I've written about that book elsewhere and I stand by it. But the Dostoevsky I actually carry around day to day isn't the cathedral-sized final novel. It's a mean, funny, miserable little book he wrote sixteen years earlier, from a basement, in the voice of a man who hates you before you've even opened it.</p>
+
+      <p>Notes from Underground opens with one of the great first lines in any language: "I am a sick man. I am a spiteful man. I am an unattractive man." He's a retired civil servant, forty years old, living alone, and he spends the first half of the book arguing with an invisible audience about why he refuses to be helped, refuses to be reasonable, refuses to act in his own interest even when he knows exactly what his own interest is. Not because he's stupid. Because he's smart enough to hate the idea that he's predictable.</p>
+
+      <p>Here's the target he's actually aiming at, and it's worth naming because it's the whole engine of the book. In Dostoevsky's Russia, a new kind of thinking was taking hold: rational egoism, the idea that if you just explained to people, clearly enough, what was actually good for them, they'd choose it every time. Feed people the right facts and behavior follows like a formula. Utopian socialists were building whole political programs on it. It's a comforting idea. It's also, Dostoevsky thought, a lie about what people are.</p>
+
+      <p>His underground man takes that whole theory and puts a boot through it. He says: sure, tell me two plus two is four. I already know that. And I hate it. Not because it's wrong, because it's a wall. "Twice two makes four is a very excellent thing," he says, "but if we are to give everything its due, twice two makes five is sometimes a very charming thing too." He'd rather have a broken tooth than a solved equation, because the toothache is at least his. It's the one thing nobody can rationalize out of him.</p>
+
+      <p>That's the whole argument, underneath the spite: free will isn't a bonus feature on top of being a rational animal. It's the thing that makes you a person instead of an organ stop, his phrase, not mine, for a piano key that only ever makes the one note it was built to make. Give a man total comfort, total predictability, a perfect crystal palace where every want is met by design, and Dostoevsky's bet is that some percentage of humanity will smash the glass just to prove they still can. Not despite it costing them. Because it costs them. The cost is the proof.</p>
+
+      <p>I don't think he's saying self-destruction is noble. The underground man is not a role model, he's pathetic on purpose, humiliated in every scene, and Dostoevsky wants you to feel the cost of that freedom, not just admire the theory of it. That's the part people flatten when they turn this into a T-shirt about being an individual. The book isn't cheering him on. It's showing you what it actually looks like when a person chooses the toothache, in real time, with nobody applauding.</p>
+
+      <p>I think about this more than I'd like to admit, standing in a client's living room after I've already told them, correctly, the objectively best place to mount a 75 inch television for viewing angle and glare. And they mount it somewhere worse anyway, because that's the wall they liked, or their spouse won that argument, or some reason that has nothing to do with lumens or degrees. For years that used to needle me, watching someone choose worse when better was free. Dostoevsky is who talked me out of needing them not to. They're not failing math. They're proving they're not a piano key. I still tell them the numbers. I've stopped being surprised when the numbers lose.</p>
+
+      <p>What makes this land harder than a lot of philosophy is that Dostoevsky wasn't theorizing from comfort. In 1849 he was arrested for reading banned political texts aloud in a discussion group, sentenced to death, and stood in front of a firing squad that was, unknown to him, never going to fire. It was staged, a psychological punishment ordered from above, and the reprieve arrived at the literal last second, after he'd already made his peace with the wall. He spent the next four years in a Siberian labor camp instead. He came out of that a different writer, obsessed for the rest of his life with the exact question the underground man keeps circling: what a person is, underneath the comfortable story other people tell about what a person should want.</p>
+
+      <p class="entry-closer">He'd rather you were free and miserable than comfortable and solved. Some days I think he's right.</p>
+
+    </div>
+
+  </main>
+
+  <footer>
+    &copy; 2026 falsafa. Twice two makes five is sometimes a very charming thing too.
+  </footer>
+
+  <script>
+    const icon = document.getElementById('theme-icon');
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark');
+      icon.textContent = '☀';
+    }
+    function toggleTheme() {
+      document.body.classList.toggle('dark');
+      const isDark = document.body.classList.contains('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      icon.textContent = isDark ? '☀' : '☽';
+    }
+  </script>
+
+</body>
+</html>

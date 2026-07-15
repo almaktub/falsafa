@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Al-Khwarizmi, and the Idea That the Unknown Can Be Restored — falsafa</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <nav>
+    <a href="../index.html" class="nav-logo">fal<em>safa</em></a>
+    <div style="display:flex; align-items:center; gap:24px;">
+      <ul class="nav-links">
+        <li><a href="../index.html">Browse</a></li>
+        <li><a href="../about.html">About</a></li>
+      </ul>
+      <button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark mode">
+        <span class="icon" id="theme-icon">☽</span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+
+    <a href="../index.html" class="back-link">← All entries</a>
+
+    <div class="entry-header">
+      <div class="kicker">Thinker · Persia/Baghdad, c. 780–850 CE</div>
+      <h1>Al-Khwarizmi, and the Idea That the Unknown Can Be Restored</h1>
+      <div class="meta">Key text: <em>The Compendious Book on Calculation by Completion and Balancing</em> (c. 820 CE)</div>
+      <div class="tags">
+        <a href="../index.html?topic=control">Control</a>
+        <a href="../index.html?topic=meaning">Meaning</a>
+      </div>
+    </div>
+
+    <div class="entry-facts">
+      <div class="fact"><span class="fact-label">Lived</span>c. 780–850 CE, worked at the House of Wisdom in Baghdad under Caliph al-Ma'mun</div>
+      <div class="fact"><span class="fact-label">Known for</span>Al-jabr, the founding text of algebra as its own discipline, separate from geometry</div>
+      <div class="fact"><span class="fact-label">Pioneered</span>Two words still in daily use everywhere on earth: algebra, from al-jabr, and algorithm, from a Latin mangling of his own name</div>
+    </div>
+
+    <div class="entry-body">
+
+      <p>This isn't a normal entry for a philosophy site, and I want to say that up front rather than pretend otherwise. Al-Khwarizmi wasn't a philosopher in the Camus or Nietzsche sense, he was a mathematician and astronomer working in ninth-century Baghdad, and he'd probably be confused to find himself filed next to Sisyphus and the eternal return. But this site started with the flat refusal to let the five-hundred-year Islamic Golden Age stretch of the philosophical story get skipped, the way most syllabi skip it, and if you're serious about that refusal, you don't get to stop at the theologians and mystics. You have to include the man who handed the entire world a new way of thinking about the unknown, because that's a philosophical event whether or not it shows up in a philosophy department's course catalog.</p>
+
+      <p>Here's the actual move, stripped of the notation. Before al-Khwarizmi, if you had a problem where some quantity was missing, you solved it case by case, geometry here, arithmetic tricks there, no shared method connecting one unknown-quantity problem to the next. Al-Khwarizmi's book, written at the House of Wisdom, the great translation and research institution built under the Abbasid caliphs, laid out a general method: name the unknown thing, however strange or incomplete it looks in front of you, and then perform two operations on it until it resolves. Al-jabr, completion or restoration, moves a negative or missing quantity across the equation until it's whole again. Al-muqabala, balancing, cancels equal quantities on both sides until what's left is simple enough to solve outright. Do those two moves, in order, on almost any problem shaped like "some quantity is missing," and you will get an answer. Every single time. That repeatable, transferable procedure is what algebra actually is, underneath the letters and symbols that came later. Al-jabr is where the word comes from, and it's not a coincidence that the word literally means restoration, putting a broken or incomplete thing back into balance.</p>
+
+      <p>That's the part I think earns him a place here, past the historical trivia. Before this book, an unknown quantity was a dead end, or at best a puzzle you solved through cleverness that didn't generalize to the next puzzle. After it, an unknown quantity was just an object with a name, temporarily incomplete, that a fixed, learnable, repeatable process could restore to balance. That's not just a math technique. It's a stance toward not-knowing itself: the unknown isn't a wall, it's a placeholder waiting on a procedure. You don't need to already understand the thing to start working on it. You need a method that treats not-yet-solved as a temporary condition rather than a permanent one.</p>
+
+      <p>The other word that comes out of his name is algorithm, by way of a Latin transliteration of "al-Khwarizmi" into "algorismus," originally referring to the Hindu-Arabic numeral system and step-by-step calculation methods he helped popularize across the Islamic world and, eventually, medieval Europe. Between al-jabr and algorismus, two of the load-bearing words of the entire digital world we now live inside, the ones underneath every spreadsheet, every piece of software, every automated system running quietly behind daily life, trace straight back to one scholar's workshop in Baghdad, at an institution built specifically because a caliph decided translating and extending Greek, Persian, and Indian knowledge was worth funding at scale. That institutional detail matters as much as the man. The House of Wisdom is the answer to the question of how one relatively short historical window produced Ibn Sina, al-Khwarizmi, and dozens of others in the same few generations. It wasn't an accident of individual genius. It was a civilization that decided, on purpose, to fund the unknown.</p>
+
+      <p>I think about al-jabr, restoration, more than the geometry itself, whenever I'm standing in front of a wiring problem that looks, at first glance, like it doesn't have a name yet. A dead zone in a mesh network. A hum in a speaker line nobody can source. The instinct, especially early in a career, is to treat the unnamed problem as a wall. What al-Khwarizmi actually handed forward, across twelve centuries and an ocean, is smaller and more useful than calculus: name the missing piece, move it where it belongs, balance both sides, and trust that the process gets you there even before you can see the answer.</p>
+
+      <p class="entry-closer">Name the unknown. It was never a wall, just an incomplete thing waiting on a method.</p>
+
+    </div>
+
+  </main>
+
+  <footer>
+    &copy; 2026 falsafa. Al-jabr means restoration, and it never stopped being true.
+  </footer>
+
+  <script>
+    const icon = document.getElementById('theme-icon');
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark');
+      icon.textContent = '☀';
+    }
+    function toggleTheme() {
+      document.body.classList.toggle('dark');
+      const isDark = document.body.classList.contains('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      icon.textContent = isDark ? '☀' : '☽';
+    }
+  </script>
+
+</body>
+</html>
