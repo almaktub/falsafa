@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wang Yangming, and the Night He Slept in a Coffin — falsafa</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <nav>
+    <a href="../index.html" class="nav-logo">fal<em>safa</em></a>
+    <div style="display:flex; align-items:center; gap:24px;">
+      <ul class="nav-links">
+        <li><a href="../index.html">Browse</a></li>
+        <li><a href="../about.html">About</a></li>
+      </ul>
+      <button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark mode">
+        <span class="icon" id="theme-icon">☽</span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+
+    <a href="../index.html" class="back-link">← All entries</a>
+
+    <div class="entry-header">
+      <div class="kicker">Thinker · Ming Dynasty, China, 1472–1529</div>
+      <h1>Wang Yangming, and the Night He Slept in a Coffin</h1>
+      <div class="meta">Key text: <em>Instructions for Practical Living</em> (Chuanxi Lu)</div>
+      <div class="tags">
+        <a href="../index.html?topic=self">Self &amp; Consciousness</a>
+        <a href="../index.html?topic=control">Control</a>
+      </div>
+    </div>
+
+    <div class="entry-facts">
+      <div class="fact"><span class="fact-label">Lived</span>1472–1529, Ming Dynasty China, including a hard exile to the frontier post of Longchang (57 years)</div>
+      <div class="fact"><span class="fact-label">Known for</span><em>Instructions for Practical Living</em>, liangzhi (innate moral knowing)</div>
+      <div class="fact"><span class="fact-label">Pioneered</span>The claim that knowing and doing are literally one act, not two separate steps where one can wait on the other</div>
+    </div>
+
+    <div class="entry-body">
+
+      <p>Wang Yangming was a court official who crossed a corrupt eunuch faction at exactly the wrong moment, got flogged nearly to death for it, and was then exiled to Longchang, a remote frontier post so far from any comfort of the empire he'd served that the posting was functionally a slow death sentence. Assassins were reportedly sent after him on the road. He faked his own drowning to survive the journey. He arrived somewhere between nowhere and nowhere else with almost nothing, and by his own account, at some point during that exile, so short on shelter that he had a stone coffin carved and slept in it, meditating night after night on the one subject that stone box makes unavoidable: death, and whether he'd actually understood anything he'd spent his career claiming to know.</p>
+
+      <p>One night in that coffin, something clicked, hard enough that he reportedly woke his students shouting. The orthodox Confucian training of his era, the Zhu Xi school, taught that you gather knowledge first, patiently, by investigating the world piece by piece, and only later, once you've accumulated enough understanding, do you act on it. Study first, live it later. Wang's realization inverted that completely. He decided knowledge and action were never actually two separate things to begin with, they were one act wearing two names. Zhixing heyi, the unity of knowledge and action. If you truly know something, you're already acting on it, because the knowing only exists in the acting. Claiming to know a thing while not living it isn't knowledge that hasn't been applied yet, it's a sign you never actually knew it.</p>
+
+      <p>He backed this with the idea of liangzhi, an innate moral knowing every person is born with, not something you build from scratch through years of study, but something you already carry and mostly just need to stop obscuring with excuses, habit, and self-interest. You already know, in the moment, whether the thing in front of you is right. The work isn't accumulating more knowledge before you act, it's clearing away what's blocking the knowing you already have so it can actually show up as action.</p>
+
+      <p>I think about this every time I catch myself claiming to know how to do something I haven't actually made my hands do yet. There's a wide gap between having watched a wiring diagram enough times to explain it back to someone and having actually run that exact cable through that exact wall, hands slick, attic at a hundred and ten degrees, half the plan wrong the second you're inside the real house instead of the drawing. I used to think of that gap as the space between theory and practice, knowledge on one side, waiting patiently for practice to catch up. Wang Yangming would say that gap means I didn't actually know it yet, I only knew a description of it. The description isn't nothing, but it isn't the thing either, and pretending otherwise is how people talk a much better game than they can actually play.</p>
+
+      <p>There's a version of this that applies well outside a job site too. Plenty of people can explain in detail what patience looks like, what honesty costs, what showing up for someone actually requires, articulate it beautifully, and still fail to do any of it under real pressure. Wang would say that's not a case of good knowledge poorly applied. It's a case of no real knowledge at all, dressed up convincingly as knowledge, because the only place knowledge like that actually lives is in the doing.</p>
+
+      <p class="entry-closer">He slept in a coffin to find out what he actually knew. Turned out most of it he hadn't known at all, he'd just been rehearsing the words.</p>
+
+    </div>
+
+  </main>
+
+  <footer>
+    &copy; 2026 falsafa. Say it with your hands, not just your mouth.
+  </footer>
+
+  <script>
+    const icon = document.getElementById('theme-icon');
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark');
+      icon.textContent = '☀';
+    }
+    function toggleTheme() {
+      document.body.classList.toggle('dark');
+      const isDark = document.body.classList.contains('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      icon.textContent = isDark ? '☀' : '☽';
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plato, and the Cave You Didn't Know You Were Sitting In — falsafa</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <nav>
+    <a href="../index.html" class="nav-logo">fal<em>safa</em></a>
+    <div style="display:flex; align-items:center; gap:24px;">
+      <ul class="nav-links">
+        <li><a href="../index.html">Browse</a></li>
+        <li><a href="../about.html">About</a></li>
+      </ul>
+      <button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark mode">
+        <span class="icon" id="theme-icon">☽</span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+
+    <a href="../index.html" class="back-link">← All entries</a>
+
+    <div class="entry-header">
+      <div class="kicker">Thinker · Athens, c. 428–348 BCE</div>
+      <h1>Plato, and the Cave You Didn't Know You Were Sitting In</h1>
+      <div class="meta">Key text: <em>The Republic</em>, Book VII</div>
+      <div class="tags">
+        <a href="../index.html?topic=meaning">Meaning</a>
+        <a href="../index.html?topic=self">Self &amp; Consciousness</a>
+        <a href="../index.html?topic=control">Control</a>
+      </div>
+    </div>
+
+    <div class="entry-facts">
+      <div class="fact"><span class="fact-label">Lived</span>c. 428–348 BCE, Athens, student of Socrates, founder of the Academy (roughly 80 years)</div>
+      <div class="fact"><span class="fact-label">Known for</span><em>The Republic</em>, the Theory of Forms, the Allegory of the Cave</div>
+      <div class="fact"><span class="fact-label">Pioneered</span>Writing philosophy entirely as dialogue, never once stating his own views in his own voice</div>
+    </div>
+
+    <div class="entry-body">
+
+      <p>Here's the setup, quickly, because most people know the shape of it without ever reading the actual text. Prisoners chained since birth in a cave, facing a blank wall, unable to turn around. Behind them, a fire, and between the fire and their backs, people carrying objects, casting shadows on the wall the prisoners face. Those shadows are the prisoners' entire reality. They've never seen anything else. They get good at it too, develop games predicting which shadow comes next, reward each other for skill at reading a wall of silhouettes cast by things they've never once seen directly.</p>
+
+      <p>One prisoner gets freed. Not gently, the text is specific about this, he's dragged, forced to turn around, forced up out of the cave into actual sunlight, and it hurts, his eyes aren't built for it yet, he can barely function in the glare at first. Slowly he adjusts, starts to see real objects instead of shadows, eventually can look at the sun itself, the source of everything he'd only ever seen reflected secondhand as flickers on a wall.</p>
+
+      <p>Then he goes back down to tell the others. And this is the part that gets skipped in the tidy motivational-poster version of the story: they don't thank him. Coming from bright sunlight back into cave-darkness, he's now the one who can't see well, stumbling, seeming worse at the shadow game than he used to be, and the other prisoners conclude the trip outside ruined him, made him useless, maybe dangerous. Plato writes, plainly, that if the freed man tried to physically drag anyone else out, the others would kill him rather than go. He wrote this after watching his own teacher, Socrates, get executed by the city for something not far off from exactly that.</p>
+
+      <p>The obvious philosophical content is the Theory of Forms sitting underneath it, the claim that the physical world we touch and see is itself a kind of shadow, an imperfect flicker of more real, perfect, unchanging Forms existing beyond it, true Justice, true Beauty, true Good, that particular just acts or beautiful objects only ever approximate. Whether you buy that metaphysics or not, and plenty of serious philosophers since haven't, the psychological observation underneath the allegory holds up regardless of the metaphysics: most of what we take as simply "reality" is a projection we've been trained since birth to read fluently, and seeing past that training is genuinely disorienting, often mistaken by everyone around you, and sometimes by yourself first, for going a little insane rather than finally seeing straight.</p>
+
+      <p>Worth noting too, since it's the honest kind of detail this site tries to include, that Plato himself never once speaks in his own voice across any of his dialogues. Every idea comes filtered through Socrates or some other character, a deliberate choice that means we're never fully certain which positions were purely Plato's own conviction versus a character he built to explore a question. The man who wrote the most influential case for objective, unchanging Truth spent his whole career hiding behind other people's mouths to make it.</p>
+
+      <p>I think about the cave every time I go back to visit family after being away in a wider world for a while and find the conversation stuck exactly where I left it years earlier, and about how easy it is to be received as the strange one for having seen something different, rather than as someone bringing something worth hearing. Plato didn't write that as a comfort. He wrote it as an accurate warning, and then went and got his own teacher's execution as the proof.</p>
+
+      <p class="entry-closer">The shadows never stopped looking real to the people still facing the wall. That was never the freed man's fault, and it never made the sun less real either.</p>
+
+    </div>
+
+  </main>
+
+  <footer>
+    &copy; 2026 falsafa. Turn around. It's going to hurt for a second.
+  </footer>
+
+  <script>
+    const icon = document.getElementById('theme-icon');
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark');
+      icon.textContent = '☀';
+    }
+    function toggleTheme() {
+      document.body.classList.toggle('dark');
+      const isDark = document.body.classList.contains('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      icon.textContent = isDark ? '☀' : '☽';
+    }
+  </script>
+
+</body>
+</html>

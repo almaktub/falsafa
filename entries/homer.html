@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homer, and the Choice Achilles Made Before Philosophy Existed — falsafa</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <nav>
+    <a href="../index.html" class="nav-logo">fal<em>safa</em></a>
+    <div style="display:flex; align-items:center; gap:24px;">
+      <ul class="nav-links">
+        <li><a href="../index.html">Browse</a></li>
+        <li><a href="../about.html">About</a></li>
+      </ul>
+      <button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark mode">
+        <span class="icon" id="theme-icon">☽</span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+
+    <a href="../index.html" class="back-link">← All entries</a>
+
+    <div class="entry-header">
+      <div class="kicker">Poet · Ionia (possibly), c. 8th century BCE</div>
+      <h1>Homer, and the Choice Achilles Made Before Philosophy Existed</h1>
+      <div class="meta">Key text: <em>The Iliad</em></div>
+      <div class="tags">
+        <a href="../index.html?topic=meaning">Meaning</a>
+        <a href="../index.html?topic=death">Death</a>
+      </div>
+    </div>
+
+    <div class="entry-facts">
+      <div class="fact"><span class="fact-label">Lived</span>c. 8th century BCE, likely Ionia, though the dates, the identity, and even whether "Homer" was one person are all genuinely disputed</div>
+      <div class="fact"><span class="fact-label">Known for</span><em>The Iliad</em>, <em>The Odyssey</em></div>
+      <div class="fact"><span class="fact-label">Pioneered</span>Nothing philosophy would technically call its own, he predates the word by centuries, and yet the first great philosopher spent real energy arguing against him</div>
+    </div>
+
+    <div class="entry-body">
+
+      <p>Let me be honest about why this one's here, because it's a fair question. Homer isn't a philosopher. He might not even be one person, the "Homeric Question" has occupied classicists for centuries over whether the Iliad and the Odyssey came from a single poet or a long oral tradition compressed into one convenient name by later generations. There's no argument here to reconstruct the way there is with Confucius or Nagarjuna. There's a poem. So why does a philosophy site have an entry for him.</p>
+
+      <p>Because Plato couldn't leave him alone, and that tells you something worth knowing. In Book Ten of the Republic, Plato does something almost nobody expects the first time they read it: he proposes banning most poetry, Homer specifically named, from his ideal city. Not because the poems are bad art, he clearly respects the craft, he even calls Homer the educator of Greece. He wants him out because poetry moves people through emotion and vivid imagery rather than through reasoned argument, and Plato thought a city trained on that kind of persuasion would end up ruled by whoever tells the most gripping story rather than whoever's actually right. He names the tension directly, "the ancient quarrel between philosophy and poetry," treating it as already old news by his own time. The first philosopher worth taking seriously built part of his system in direct opposition to a poet who'd already been dead for centuries. That's not nothing. That's philosophy admitting where it came from and then trying to argue its way past it.</p>
+
+      <p>What it's arguing past is worth sitting with on its own terms, because Homer got to the actual hardest question first, just in the form of a decision instead of an argument. Achilles, the Iliad's central figure, is told flatly what his two options are. Stay out of the Trojan War, go home, live a long, comfortable, unremarkable life, and be forgotten the way most people eventually are. Or go to Troy, fight, die young, and be remembered forever, kleos, glory that outlives the body. He picks Troy. He picks a shorter life that means something over a longer one that fades into nothing anyone will recall.</p>
+
+      <p>Every philosopher who ever built a framework around meaning versus duration, quality of life versus quantity of it, playing it safe versus doing the thing that actually matters to you even at real cost, is running some version of Achilles' choice in more careful language. Camus' Sisyphus pushing the boulder anyway. Nietzsche asking if you'd relive your exact life again. Socrates choosing the trial over exile. They're all footnotes to a decision a poet dramatized before anyone had built a system to explain why it mattered.</p>
+
+      <p>I left a country as a kid, obviously not by choice at that age, but I've made smaller versions of Achilles' actual choice as an adult more than once, since. There's always a safer, more forgettable path sitting right there, keep the head down, don't take the risk, don't say the thing, don't leave the comfortable job for the uncertain one. And there's the other path, louder, riskier, more likely to cost you something real, but the only one that actually feels like yours when you're doing it. Achilles didn't have Camus or Nietzsche to explain the choice to him. He just made it, three thousand years before anyone had the vocabulary to explain why it was hard.</p>
+
+      <p class="entry-closer">Philosophy spent the next two and a half thousand years building arguments for a choice a poet had already dramatized without needing a single one of them.</p>
+
+    </div>
+
+  </main>
+
+  <footer>
+    &copy; 2026 falsafa. The quarrel is ancient. So is the question it's arguing about.
+  </footer>
+
+  <script>
+    const icon = document.getElementById('theme-icon');
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark');
+      icon.textContent = '☀';
+    }
+    function toggleTheme() {
+      document.body.classList.toggle('dark');
+      const isDark = document.body.classList.contains('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      icon.textContent = isDark ? '☀' : '☽';
+    }
+  </script>
+
+</body>
+</html>

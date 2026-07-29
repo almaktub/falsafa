@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nagarjuna, and the Cup That Isn't Really There — falsafa</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <nav>
+    <a href="../index.html" class="nav-logo">fal<em>safa</em></a>
+    <div style="display:flex; align-items:center; gap:24px;">
+      <ul class="nav-links">
+        <li><a href="../index.html">Browse</a></li>
+        <li><a href="../about.html">About</a></li>
+      </ul>
+      <button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark mode">
+        <span class="icon" id="theme-icon">☽</span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+
+    <a href="../index.html" class="back-link">← All entries</a>
+
+    <div class="entry-header">
+      <div class="kicker">Thinker · Southern India, c. 150–250 CE</div>
+      <h1>Nagarjuna, and the Cup That Isn't Really There</h1>
+      <div class="meta">Key text: <em>Mulamadhyamakakarika</em> (Fundamental Verses on the Middle Way)</div>
+      <div class="tags">
+        <a href="../index.html?topic=meaning">Meaning</a>
+        <a href="../index.html?topic=self">Self &amp; Consciousness</a>
+      </div>
+    </div>
+
+    <div class="entry-facts">
+      <div class="fact"><span class="fact-label">Lived</span>c. 150–250 CE, southern India, dates and biography largely reconstructed from later tradition</div>
+      <div class="fact"><span class="fact-label">Known for</span><em>Mulamadhyamakakarika</em>, founder of the Madhyamaka ("Middle Way") school of Buddhist philosophy</div>
+      <div class="fact"><span class="fact-label">Pioneered</span>Sunyata, emptiness, as a rigorous logical conclusion rather than a mood or a metaphor</div>
+    </div>
+
+    <div class="entry-body">
+
+      <p>Say the word emptiness to most people and they hear despair, a void, the meaningless nothing at the bottom of everything. That's almost exactly backward from what Nagarjuna meant by it, and he spent an entire treatise, verse by verse, closing off every possible way to misread him as a nihilist, because people were already getting it wrong while he was alive to correct them. His actual claim is closer to the opposite of despair. Nothing is fixed, which means nothing is stuck, which means everything stays genuinely alive and open, including you.</p>
+
+      <p>He built on something the Buddha had already taught, dependent origination, the idea that everything arises in relation to other things rather than standing on its own. Nagarjuna pushed that observation all the way through with a logician's discipline until it became an airtight argument. Take a cup. It seems like an obviously independent thing, sitting there being a cup regardless of anything else. But look closer and the cup-ness dissolves into relationships: the clay it's made from, the potter who shaped it, the concept of "holding liquid" that gives the shape its purpose, the language that has a word for it at all. Strip away every one of those relationships and there's no separate, self-sufficient "cup" left over hiding underneath. What you called a cup was never an independent thing, svabhava, it was a knot of relationships that happened to be convenient to name.</p>
+
+      <p>He didn't stop at objects. He ran the same argument on causation, on motion, on the self, on time, using a tool called the tetralemma, a fourfold negation: a thing isn't simply real, isn't simply unreal, isn't both, and isn't neither. Every fixed position you try to plant collapses under its own weight once you look closely enough at what it depends on. That's not him being cute or evasive. It's the actual conclusion, that reality doesn't hold still long enough for any fixed label to fully capture it, everything is relational, provisional, dependent, and that dependency is what emptiness actually names.</p>
+
+      <p>Here's the part that keeps this from being a downer: if nothing has a fixed, independent essence, nothing is permanently locked into being only one thing either. Fixed essence would mean fixed fate. Emptiness of essence is what leaves room for change, for growth, for a bad situation to actually become a different situation instead of an unchangeable fact. Nagarjuna's students have pointed this out for centuries, emptiness isn't the abyss, it's the reason the abyss isn't permanent.</p>
+
+      <p>I think about this constantly with my own sense of self, because I never had one fixed version to fall back on. I'm someone different depending on which language is in my mouth, gentler and slower in Dari with my mother, sharper and faster in English at a job site, somewhere in between in Urdu with people who half expect the Dari version and get surprised by the English one. For a long stretch I treated that as a problem to solve, like there had to be a real, essential, fixed me hiding underneath all three versions if I just looked hard enough. Nagarjuna would say I was looking for something that was never there to find, not because I'm empty in the sad sense, but because none of us come with a fixed independent essence sitting underneath the relationships. The three versions of me aren't masks hiding one true face. They're what "me" actually is, dependent, relational, genuinely all real, none of them the whole fixed truth because there isn't a fixed truth sitting behind them waiting to be uncovered.</p>
+
+      <p class="entry-closer">The cup was never a fixed thing to begin with. Neither are you, and that was never the bad news.</p>
+
+    </div>
+
+  </main>
+
+  <footer>
+    &copy; 2026 falsafa. Nothing's fixed, which is the good news, not the bad news.
+  </footer>
+
+  <script>
+    const icon = document.getElementById('theme-icon');
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark');
+      icon.textContent = '☀';
+    }
+    function toggleTheme() {
+      document.body.classList.toggle('dark');
+      const isDark = document.body.classList.contains('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      icon.textContent = isDark ? '☀' : '☽';
+    }
+  </script>
+
+</body>
+</html>
