@@ -8,20 +8,9 @@
 </head>
 <body>
 
-  <nav>
-    <a href="index.html" class="nav-logo">fal<em>safa</em></a>
-    <div style="display:flex; align-items:center; gap:24px;">
-      <ul class="nav-links">
-        <li><a href="index.html">Browse</a></li>
-        <li><a href="about.html">About</a></li>
-      </ul>
-      <button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark mode">
-        <span class="icon" id="theme-icon">☽</span>
-      </button>
-    </div>
-  </nav>
+  <a class="skip" href="#content">Skip to content</a><header class="site-header"><a class="wordmark" href="index.html">fal<i>safa</i><span lang="fa" dir="rtl">فلسفه</span></a><nav aria-label="Main navigation"><a href="index.html">The library</a><a href="about.html">About falsafa</a><button class="theme-toggle" type="button" aria-label="Switch to dark appearance" aria-pressed="false"><span class="theme-icon" aria-hidden="true">◐</span><span class="theme-label">Dark</span></button></nav></header>
 
-  <main>
+  <main id="content" class="reading-page about-page">
 
     <a href="index.html" class="back-link">← Back</a>
 
@@ -31,36 +20,22 @@
     </div>
 
     <div class="about-body">
-      <p>My name is Yaya. I write another site, maktub, that's mostly personal essays: books, family, grief, the strange logistics of being an immigrant in America. Philosophy shows up in almost everything I write over there without me planning it, because it's genuinely how I process most of my life. This site is what happens when I stop letting it show up sideways and just write about it directly.</p>
+      <p>My name is Yaya. I write another site, maktub, that's mostly personal essays: books, family, grief, the strange logistics of being an immigrant in America. Philosophy shows up in almost everything I write over there without me planning it, because it is how I process much of my life. This site is what happens when I stop letting it show up sideways and just write about it directly.</p>
 
-      <p>I got tired of two things. The first is how most philosophy content online is either a college syllabus nobody asked for or a quote stapled to a stock photo of a mountain. The second is how much of the story gets left out. Most people can name Aristotle, then Descartes, and have no idea what happened in the roughly five hundred years in between, when the center of the intellectual world ran through Baghdad and Bukhara and Cordoba instead of Paris and Vienna. That gap isn't an accident. It's a habit. I'd like to correct it a little, one entry at a time, alongside the names everyone already knows.</p>
+      <p>I wanted a place to read philosophy without losing the person doing the reading. I also wanted more of the history in the room. Baghdad, Bukhara and Cordoba belong in that history, alongside Athens and the other places that tend to get named first. The thinkers writing in Arabic and Persian were not just holding Greek books until Europe wanted them back. They were making arguments of their own. This library makes space for that work without pretending one city, language or tradition contains the whole story.</p>
 
-      <p>Every entry here follows the same rule: if I can't explain the idea the way I'd explain the ending of The Brothers Karamazov to a friend at 1 A.M., over there, I'm not done writing it yet. No robes, no incense, no pretending these were untouchable geniuses instead of actual people who had bad marriages, worse tempers, and occasionally got imprisoned by their own government. The ideas are heavy enough without the costume.</p>
+      <p>Every entry here follows the same rule: if I can't explain the idea the way I'd explain the ending of The Brothers Karamazov to a friend at 1 A.M., I'm not done writing it yet. No robes, no incense, no pretending these were untouchable geniuses instead of actual people who had bad marriages, worse tempers, and occasionally got imprisoned by their own government. The ideas are heavy enough without the costume.</p>
 
       <p>This is a live project. New entries get added when I have something honest to say about a thinker, not on a schedule. If a name is missing that you think belongs here, or you've read something I got wrong, tell me. I'd rather be corrected than confidently incomplete.</p>
 
       <p>Love, Yaya</p>
     </div>
 
-  </main>
+  <section class="editorial-notes" id="reading-note"><p class="eyebrow">A NOTE ON READING</p><h2>Keep the voice. Check the claim.</h2><p>These entries are personal essays about ideas, not a complete history of philosophy. A scene from a novel is not automatically its author’s position. A traditional biography is not a contemporary record. A comparison between thinkers is not proof of influence.</p><p>The source notes identify the works being discussed and a place to read further. Page numbers vary by edition, so books, chapters and standard section numbers are used where possible. Translated wording can differ. The essays speak in a personal voice; the context notes help distinguish interpretation from historical and philosophical claims.</p><p>This edition includes targeted factual corrections and editorial qualifications. It is not a claim that every anecdote or quotation in the collection has been independently verified.</p></section></main>
 
-  <footer>
-    &copy; 2026 falsafa. Also not copyrighted, same as maktub. If you scrolled this far, hi.
-  </footer>
+  <footer class="site-footer"><a class="wordmark" href="index.html">fal<i>safa</i></a><p>A personal library of ideas. By Yaya.</p><a href="about.html#reading-note">A note on reading & sources ↗</a></footer>
 
-  <script>
-    const icon = document.getElementById('theme-icon');
-    if (localStorage.getItem('theme') === 'dark') {
-      document.body.classList.add('dark');
-      icon.textContent = '☀';
-    }
-    function toggleTheme() {
-      document.body.classList.toggle('dark');
-      const isDark = document.body.classList.contains('dark');
-      localStorage.setItem('theme', isDark ? 'dark' : 'light');
-      icon.textContent = isDark ? '☀' : '☽';
-    }
-  </script>
+  <script src="site.js" defer></script>
 
 </body>
 </html>
